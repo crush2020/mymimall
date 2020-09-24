@@ -133,6 +133,7 @@
       ...mapState(['username','cartCount'])
     },
     filters:{
+      // 过滤器，对商品的价格进行处理
       currency(val){
         if(!val)return '0.00';
         return '￥' + val.toFixed(2) + '元';
@@ -153,7 +154,7 @@
         this.axios.get('/products',{
           params:{
             categoryId:'100012',
-            pageSize:6
+            pageSize:6 // 只展示六条数据
           }
         }).then((res)=>{
           this.phoneList = res.list;
@@ -182,6 +183,7 @@
   @import './../assets/scss/base.scss';
   @import './../assets/scss/mixin.scss';
   @import './../assets/scss/config.scss';
+  // a标签中的target="_blank"可以打开新的窗口
   .header{
     .nav-topbar{
       height:39px;
@@ -228,6 +230,7 @@
               cursor:pointer;
             }
             &:hover{
+              // 鼠标移上去时给高度与透明度
               color:$colorA;
               .children{
                 height:220px;
@@ -240,12 +243,13 @@
               top:112px;
               left:0;
               width:1226px;
+              // 默认透明度与高度为零
               height:0;
               opacity:0;
-              overflow:hidden;
+              overflow:hidden; // 隐藏children原本的占位，只有点击menu时才展开
               box-shadow:0px 7px 6px 0px rgba(0, 0, 0, 0.11);
               z-index: 10;
-              transition:all .5s;
+              transition:all .5s;  // 过渡动画
               background-color: #ffffff;
               .product{
                 position:relative;
@@ -285,7 +289,7 @@
                   width:1px;
                 }
                 &:last-child:before{
-                  display:none;
+                  display:none; // 去掉最后一个伪类元素，即小竖杠
                 }
               }
             }
@@ -300,7 +304,7 @@
             align-items:center;
             input{
               border:none;
-              box-sizing: border-box;
+              box-sizing: border-box; // 换掉盒子模型，宽度不包括padding
               border-right:1px solid #E0E0E0;
               width:264px;
               height:50px;

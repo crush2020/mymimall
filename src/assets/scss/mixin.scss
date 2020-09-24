@@ -25,7 +25,7 @@
   width:$w;
   height:$h;
   background:url($img) no-repeat center;
-  background-size:contain;
+  background-size:contain; // 背景图片充满整个元素
 }
 @mixin height($h:0,$lh:$h) {
   height: $h;
