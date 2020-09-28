@@ -37,9 +37,11 @@ axios.interceptors.response.use(function(response){
   Message.error(res.data.message);
   return Promise.reject(error);
 });
-
+// vue官方组件，实现全局的请求
 Vue.use(VueAxios,axios);
+// vue官方组件，实现用户验证
 Vue.use(VueCookie);
+// 图片懒加载的实现，vue官方组件
 Vue.use(VueLazyLoad,{
   loading:'/imgs/loading-svg/loading-bars.svg'
 })

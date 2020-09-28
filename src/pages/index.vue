@@ -40,7 +40,8 @@
             </li>
           </ul>
         </div>
-        <swiper v-bind:options="swiperOption">
+        <swiper v-bind:options="swiperOption"> 
+            <!--详情去www.swiper.com.cn查找官方文档  -->
           <swiper-slide v-for="(item,index) in slideList" v-bind:key="index">
             <a v-bind:href="'/#/product/'+item.id"><img v-bind:src="item.img"></a>
           </swiper-slide>
@@ -290,7 +291,7 @@
                 img{
                   width:42px;
                   height:35px;
-                  vertical-align:middle;
+                  vertical-align:middle;  // 图片文字居中
                   margin-right:15px;
                 }
               }
@@ -301,7 +302,7 @@
       .swiper-container {
         height: 451px;
         .swiper-button-prev{
-          left:274px;
+          left:274px;  // 控制轮播图按钮的位置
         }
         img{
           width:100%;

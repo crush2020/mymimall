@@ -61,6 +61,7 @@ export default {
       }).then((res)=>{
         this.$cookie.set('userId',res.id,{expires:'Session'});
         // this.$store.dispatch('saveUserName',res.username);
+        // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`然后使用 mapActions 辅助函数
         this.saveUserName(res.username);
         this.$router.push({
           name:'index',

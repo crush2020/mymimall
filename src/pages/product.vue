@@ -44,6 +44,7 @@
           <div class="overlay"></div>
           <div class="video" v-bind:class="showSlide">
             <span class="icon-close" @click="closeVideo"></span>
+            <!-- muted静音播出 autoplay自动播放 有播放按钮-->
             <video src="/imgs/product/video.mp4" muted autoplay controls="controls"></video>
           </div>
         </div>
@@ -236,8 +237,8 @@
             video{
               width:100%;
               height:100%;
-              object-fit:cover;
-              outline:none;
+              object-fit:cover;  // 内置样式视频覆盖整个窗口
+              outline:none; //内置样式防止产生干扰
             }
           }
         }

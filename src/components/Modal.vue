@@ -1,5 +1,6 @@
 <template>
   <transition name="slide">
+    <!-- transition为vue内置的过渡动画组件，详细用法去看vue官网 -->
     <div class="modal" v-show="showModal">
       <div class="mask"></div>
       <div class="modal-dialog">

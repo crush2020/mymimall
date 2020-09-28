@@ -25,15 +25,18 @@
       }
     },
     mounted(){
+      // scroll，插件内部基于window.scroll事件，会持续监听滚动，这本身就是scroll的特性，只要有滚动，就会触发，所以才会一直监听
       window.addEventListener('scroll',this.initHeight)
     },
     methods:{
       initHeight(){
+        // 动态获取滚动高度，兼容chorm和ie
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
         this.isFixed = scrollTop > 152? true:false;
       }
     },
     destroyed(){
+      // vue内部生命周期函数，避免内部一直监听滚动并销毁吸顶功能initHeight，ture为捕获，false为冒泡
       window.removeEventListener('scroll',this.initHeight,false)
     }
   }
