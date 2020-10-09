@@ -93,6 +93,7 @@
         this.$router.push(`/detail/${id}`);
       },
       closeVideo(){
+        // 关闭视频的时候停止播放
         this.showSlide='slideUp';
         let vi = document.getElementsByTagName('video')[0]
         vi.pause();
